@@ -13,18 +13,15 @@ def leer_palabra_secreta(csvfilename):
 def pedir_letra(letras_usadas):
     while True:
         letra_ingresada = (input('ingresa una letra del alfabeto: ')).lower()
-        # evaluamos si el dato ingresado es no es una letra del alfabeto
+        # evaluamos si el dato ingresado no es una letra del alfabeto
         if not letra_ingresada.isalpha():
             print('debes ingresar una letra del alfabeto, intenta de nuevo...\n')
-            continue
         # evaluamos si el dato ingresado es de una sola letra
         elif len(letra_ingresada) > 1:
             print('debes ingresar una sola letra, intenta de nuevo...\n')
-            continue
         # evaluamos si la letra no se habia utilizado con anterioridad
         elif letra_ingresada in letras_usadas:
             print('letra ya utilizada, intenta de nuevo...\n')
-            continue
         # si el flujo llega acá la letra esta validada
         else:
             return letra_ingresada
@@ -44,7 +41,6 @@ def validar_palabra(letras_usadas, palabra_secreta):
                 return True
         except:
             return False
-
 
 if __name__ == "__main__":
     print("\n¡Aquí comienza el juego del ahorcado!\n")
