@@ -36,8 +36,7 @@ def validar_palabra(letras_usadas, palabra_secreta):
 
     for index in range(len(letras_usadas)):
         cantidad_letras -= palabra_secreta.count(letras_usadas[index])
-        if cantidad_letras == 0: return True
-    return False
+    return cantidad_letras == 0
 
 
 if __name__ == "__main__":
