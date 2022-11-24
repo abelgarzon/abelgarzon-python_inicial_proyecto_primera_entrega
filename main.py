@@ -35,12 +35,9 @@ def validar_palabra(letras_usadas, palabra_secreta):
     cantidad_letras = len(palabra_secreta)
 
     for index in range(len(letras_usadas)):
-        try:
-            cantidad_letras -= palabra_secreta.count(letras_usadas[index])
-            if cantidad_letras == 0:
-                return True
-        except:
-            return False
+        cantidad_letras -= palabra_secreta.count(letras_usadas[index])
+        if cantidad_letras == 0: return True
+        else: return False
 
 if __name__ == "__main__":
     print("\n¡Aquí comienza el juego del ahorcado!\n")
